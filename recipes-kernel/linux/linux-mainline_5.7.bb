@@ -13,16 +13,10 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
 SRC_URI_append = " \
     file://riscv-dont-mark-init-section-as-non-executable.patch \
-    file://0001-riscv-introduce-vDSO-common-flow-v4.patch \
 "
 
 SRC_URI_append_freedom-u540 = " \
-    file://0001-PCI-microsemi-Add-host-driver-for-Microsemi-PCIe-con.patch \
-    file://0002-Microsemi-PCIe-expansion-board-DT-entry.patch \
-    file://0003-HACK-Revert-of-device-Really-only-set-bus-DMA-mask-w.patch \
-    file://0004-SiFive-Unleashed-CPUFreq.patch \
-    file://0007-Add-PWM-LEDs-D1-D2-D3-D4.patch \
-    file://riscv-add-support-to-determine-no-of-L2-cache-way-enabled.patch \
+    file://0022-DT-entry.patch \
 "
 
 # For freedom-u540 use out-of-tree defconfig

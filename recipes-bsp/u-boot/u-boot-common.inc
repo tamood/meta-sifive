@@ -17,6 +17,7 @@ PE = "1"
 SRCREV = "e411a090cf7162626d54d72dfc4530986c788cdb"
 
 SRC_URI = "git://git.denx.de/u-boot.git \
+           file://u500-generic.patch \
           "
 
 S = "${WORKDIR}/git"

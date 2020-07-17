@@ -17,12 +17,7 @@ PV = "git${SRCPV}"
 BRANCH = "master"
 SRCREV = "128f282d177d0e43c9c449fb98462f453cc47258"
 SRC_URI = "git://github.com/sifive/freedom-u540-c000-bootloader.git;branch=${BRANCH} \
-           file://import-detect-null.patch \
-           file://use-oe-default-cmd.patch \
-           file://drop-gnu-build-id.patch \
-           file://gcc-nopie.patch \
-           file://enable-entire-L2-cache.patch \
-           file://lower-optimization-level.patch \
+           file://u500.patch \
            "
 
 S = "${WORKDIR}/git"
@@ -30,7 +25,9 @@ S = "${WORKDIR}/git"
 do_compile() {
     # Update DTB from the current kernel build
     rm -f ${B}/fsbl/ux00_fsbl.dts
+    rm -f ${B}/zsbl/ux00_zsbl.dts
     cp -f ${DEPLOY_DIR_IMAGE}/${RISCV_SBI_FDT} ${B}/fsbl/ux00_fsbl.dtb
+    cp -f ${DEPLOY_DIR_IMAGE}/${RISCV_SBI_FDT} ${B}/zsbl/ux00_zsbl.dtb
 
     oe_runmake
 }
